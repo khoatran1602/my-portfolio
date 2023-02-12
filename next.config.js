@@ -3,6 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-}
+  images: {
+    domains: ["assets.codepen.io"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
