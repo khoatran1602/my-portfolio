@@ -1,49 +1,124 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import styles from "./page.module.css";
+import BioPage from "../pages/bio";
 
 const Header = () => {
   return (
-    <div className="font-DM Sans sans-serif text-16 font-normal leading-normal text-[color4] bg-[color3] overflow-x-hidden h-screen w-screen">
-      <div className="w-full max-w-520 min-w-280 mx-auto flex flex-col justify-center">
-        <div className="relative h-full pb-30 border border-gray-200 shadow-lg bg-[color2] mx-auto">
-          <header id="header">
-            <div id="personal-info">
-              <div className="avatar-container">
+    <div className="flex flex-col text-[color4] bg-[color3] overflow-x-hidden h-screen w-screen">
+      <div className={styles.container}>
+        <header>
+          <div className="relative h-full pb-30 border bg-[color2] mx-auto">
+            <div className="relative">
+              <div className="flex justify-center py-30 pb-5">
                 <Image
+                  className="rounded-full shadow-xl w-32 h-32"
                   src="/avatar.png"
                   alt="Khoa Tran"
                   width="100"
                   height="100"
                 />
               </div>
-              <div className="header-info-container">
-                <h1>Khoa Tran</h1>
-                <p>
-                  Full Stack Web Developer <br />
-                  [HTML, CSS, JavaScript]
+              <div className="text-center">
+                <h1 className="text-2xl font-dm-sans tracking-tight font-bold">
+                  Khoa Tran
+                </h1>
+                <p className="text-sm font-bold tracking-tight text-[#2b2c48] mb-5">
+                  Full Stack Developer <br />
+                  [Front-end: HTML, CSS, TypeScript] <br />
+                  [Back-end: Java]
                 </p>
+                <div className="flex justify-center">
+                  <Image
+                    src="https://assets.codepen.io/9277864/mood-rock.svg"
+                    alt="Rock"
+                    width="25"
+                    height="25"
+                  />
+                </div>
+              </div>
+              <div className="absolute top-1 left-2 p-4 flex flex-col gap-10 opacity-40">
                 <Image
-                  src="https://assets.codepen.io/9277864/mood-rock.svg"
-                  alt="Rock"
-                  width="25"
-                  height="25"
+                  src="https://assets.codepen.io/9277864/html.svg"
+                  alt="HTML"
+                  width="100"
+                  height="100"
+                />
+                <Image
+                  src="https://assets.codepen.io/9277864/programming.svg"
+                  alt="Programming"
+                  width="100"
+                  height="100"
+                />
+                <Image
+                  src="https://assets.codepen.io/9277864/js.svg"
+                  alt="JS"
+                  width="100"
+                  height="100"
                 />
               </div>
-              <div className="header-icons">
-                <div className="header-icons-row first-icons">
-                  <div className="header-icon-4"></div>
-                  <div className="header-icon-2"></div>
-                  <div className="header-icon-3"></div>
-                </div>
-                <div className="header-icons-row">
-                  <div className="header-icon-7"></div>
-                  <div className="header-icon-10"></div>
-                  <div className="header-icon-12"></div>
-                </div>
+              <div className="absolute top-1 right-0 p-4 flex flex-col gap-10 opacity-40">
+                <Image
+                  src="https://assets.codepen.io/9277864/css.svg"
+                  alt="CSS"
+                  width="100"
+                  height="100"
+                />
+                <Image
+                  src="https://assets.codepen.io/9277864/vue.svg"
+                  alt="Vue"
+                  width="100"
+                  height="100"
+                />
+                <Image
+                  src="https://assets.codepen.io/9277864/front-end.svg"
+                  alt="Front-end"
+                  width="100"
+                  height="100"
+                />
               </div>
             </div>
-          </header>
-        </div>
+          </div>
+          <nav className="flex items-center justify-center">
+            <ul className="">
+              <Link href="/bio">
+                <button className="p-5">
+                  <Image
+                    src="https://assets.codepen.io/9277864/about-me.svg"
+                    alt="Bio"
+                    width="80"
+                    height="80"
+                  />
+                </button>
+              </Link>
+              <button className="p-5">
+                <Image
+                  src="https://assets.codepen.io/9277864/office-work.svg"
+                  alt="Experience"
+                  width="80"
+                  height="80"
+                />
+              </button>
+              <button className="p-5">
+                <Image
+                  src="https://assets.codepen.io/9277864/page.svg"
+                  alt="Portfolio"
+                  width="80"
+                  height="80"
+                />
+              </button>
+              <button className="p-5">
+                <Image
+                  src="https://assets.codepen.io/9277864/contact.svg"
+                  alt="Contact"
+                  width="80"
+                  height="80"
+                />
+              </button>
+            </ul>
+          </nav>
+        </header>
       </div>
     </div>
   );
