@@ -1,10 +1,27 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./page.module.css";
 import BioPage from "../pages/bio";
 
 const Header = () => {
+  const [bioPressed, setBioPressed] = useState(false);
+  const [expPressed, setExpPressed] = useState(false);
+
+  const bioPress = () => {
+    if (!bioPressed) setBioPressed(true);
+    else setBioPressed(false);
+  };
+
+  const expPress = () => {
+    if (!expPressed) {
+      setBioPressed(false);
+      setExpPressed(true);
+    } else setExpPressed(false);
+  };
+
   return (
     <div className="flex flex-col text-[color4] bg-[color3] overflow-x-hidden h-screen w-screen">
       <div className={styles.container}>
@@ -82,17 +99,16 @@ const Header = () => {
           </div>
           <nav className="flex items-center justify-center">
             <ul className="">
-              <Link href="/bio">
-                <button className="p-5">
-                  <Image
-                    src="https://assets.codepen.io/9277864/about-me.svg"
-                    alt="Bio"
-                    width="80"
-                    height="80"
-                  />
-                </button>
-              </Link>
-              <button className="p-5">
+              <button className="p-5" onClick={bioPress}>
+                <Image
+                  src="https://assets.codepen.io/9277864/about-me.svg"
+                  alt="Bio"
+                  width="80"
+                  height="80"
+                />
+              </button>
+              {/* {bioPressed && <BioPage />} */}
+              <button className="p-5" onClick={expPress}>
                 <Image
                   src="https://assets.codepen.io/9277864/office-work.svg"
                   alt="Experience"
