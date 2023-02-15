@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ContactPage = () => {
   return (
-    <div className="flex flex-col ml-96">
+    <div className="flex flex-col ml-96 h-screen">
       <h2 className="font-bold text-lg mb-3">Contact</h2>
       <div>
         <div className="flex flex-row mb-5">
