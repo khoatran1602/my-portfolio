@@ -44,7 +44,11 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-col text-[color4] bg-[color3] overflow-x-hidden h-full w-full">
+    <div
+      className={`flex flex-col text-[color4] bg-[color3] overflow-x-hidden ${
+        bioPressed ? "h-full" : "h-screen"
+      } w-full`}
+    >
       <div className={styles.container}>
         <header>
           <div className="relative h-full pb-30 border bg-[color2] mx-auto">
@@ -158,15 +162,11 @@ const Header = () => {
               </button>
             </ul>
           </nav>
-          {/* {bioPressed && <BioPage />}
+          {bioPressed && <BioPage />}
           {expPressed && <ExpPage />}
           {portPressed && <PortfolioPage />}
-          {contactPressed && <ContactPage />} */}
+          {contactPressed && <ContactPage />}
         </header>
-        {bioPressed && <BioPage />}
-        {expPressed && <ExpPage />}
-        {portPressed && <PortfolioPage />}
-        {contactPressed && <ContactPage />}
       </div>
     </div>
   );
