@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import * as Popover from "@radix-ui/react-popover";
 
 const BioPage = () => {
   return (
@@ -41,28 +42,28 @@ const BioPage = () => {
       </ul>
       <p>
         That would be great if we connected on social media, especially on
-        Twitter, kept in touch, and shared how we live this life.
+        Github, kept in touch, and shared how we live this life.
       </p>
       <div className="flex flex-row mt-3">
-        {/* <div className=""> */}
         <a
           href="https://www.facebook.com/tranthien1602/"
           target="_blank"
           rel="noopener noreferrer"
+          className="hover:bg-[#555a60] rounded flex justify-center align-middle"
         >
           <Image
+            className="mx-5"
             src="https://assets.codepen.io/9277864/social-media-facebook.svg"
             alt="Facebook"
             width="28"
             height="28"
           />
         </a>
-        {/* </div> */}
-        {/* <div className="mx-5"> */}
         <a
           href="https://twitter.com/trankhoa1602"
           target="_blank"
           rel="noopener noreferrer"
+          className="hover:bg-[#555a60] rounded flex justify-center align-middle"
         >
           <Image
             className="mx-5"
@@ -72,27 +73,25 @@ const BioPage = () => {
             height="28"
           />
         </a>
-        {/* </div> */}
-        {/* <div className="mx-5"> */}
         <a
           href="https://github.com/khoatran1602"
           target="_blank"
           rel="noopener noreferrer"
+          className="hover:bg-[#555a60] rounded flex justify-center align-middle"
         >
           <Image
-            className="mt-[-8px]"
+            className="mx-5"
             src="/github.svg"
             alt="Instagram"
             width="48"
             height="48"
           />
         </a>
-        {/* </div> */}
-        {/* <div className="mx-5"> */}
         <a
           href="https://www.linkedin.com/in/tr%E1%BA%A7n-khoa-a27a33184/"
           target="_blank"
           rel="noopener noreferrer"
+          className="hover:bg-[#555a60] rounded flex justify-center align-middle"
         >
           <Image
             className="mx-5"
@@ -102,18 +101,27 @@ const BioPage = () => {
             height="28"
           />
         </a>
-        {/* </div> */}
-        {/* <div className="mx-5"> */}
-        <a href="#" target="_blank">
-          <Image
-            className="mx-5"
-            src="https://assets.codepen.io/9277864/social-media-google.svg"
-            alt="Google"
-            width="28"
-            height="28"
-          />
-        </a>
-        {/* </div> */}
+        <Popover.Root>
+          <Popover.Trigger asChild>
+            <div className="hover:bg-[#555a60] rounded flex justify-center align-middle">
+              <Image
+                className="mx-5 cursor-pointer hover:bg-[#555a60] rounded"
+                src="https://assets.codepen.io/9277864/social-media-google.svg"
+                alt="Google"
+                width="28"
+                height="28"
+              />
+            </div>
+          </Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content
+              className="rounded p-5 w-[260px] bg-white shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)] focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.violet7)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade"
+              sideOffset={5}
+            >
+              <div>trankhoa758@gmail.com</div>
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
       </div>
     </div>
   );

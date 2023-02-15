@@ -6,19 +6,41 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import BioPage from "../pages/bio";
 import ExpPage from "@/pages/exp";
+import PortfolioPage from "@/pages/portfolio";
+import ContactPage from "@/pages/contact";
 
 const Header = () => {
   const [bioPressed, setBioPressed] = useState(false);
   const [expPressed, setExpPressed] = useState(false);
+  const [portPressed, setPortPressed] = useState(false);
+  const [contactPressed, setContactPressed] = useState(false);
 
   const bioPress = () => {
     setExpPressed(false);
+    setPortPressed(false);
+    setContactPressed(false);
     setBioPressed(!bioPressed);
   };
 
   const expPress = () => {
     setBioPressed(false);
+    setPortPressed(false);
+    setContactPressed(false);
     setExpPressed(!expPressed);
+  };
+
+  const portPress = () => {
+    setExpPressed(false);
+    setBioPressed(false);
+    setContactPressed(false);
+    setPortPressed(!portPressed);
+  };
+
+  const contactPress = () => {
+    setExpPressed(false);
+    setPortPressed(false);
+    setBioPressed(false);
+    setContactPressed(!contactPressed);
   };
 
   return (
@@ -105,6 +127,7 @@ const Header = () => {
                   width="80"
                   height="80"
                 />
+                <p className="font-bold">Bio</p>
               </button>
               <button className="p-5" onClick={expPress}>
                 <Image
@@ -113,27 +136,32 @@ const Header = () => {
                   width="80"
                   height="80"
                 />
+                <p className="font-bold">Experience</p>
               </button>
-              <button className="p-5">
+              <button className="p-5" onClick={portPress}>
                 <Image
                   src="https://assets.codepen.io/9277864/page.svg"
                   alt="Portfolio"
                   width="80"
                   height="80"
                 />
+                <p className="font-bold">Portfolio</p>
               </button>
-              <button className="p-5">
+              <button className="p-5" onClick={contactPress}>
                 <Image
                   src="https://assets.codepen.io/9277864/contact.svg"
                   alt="Contact"
                   width="80"
                   height="80"
                 />
+                <p className="font-bold">Contact</p>
               </button>
             </ul>
           </nav>
           {bioPressed && <BioPage />}
           {expPressed && <ExpPage />}
+          {portPressed && <PortfolioPage />}
+          {contactPressed && <ContactPage />}
         </header>
       </div>
     </div>
