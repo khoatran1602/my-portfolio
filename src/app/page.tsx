@@ -46,7 +46,9 @@ const Header = () => {
   return (
     <div
       className={`flex flex-col text-[color4] bg-[color3] overflow-x-hidden ${
-        bioPressed ? "h-full" : "h-screen"
+        bioPressed || expPressed || portPressed || contactPressed
+          ? "h-full"
+          : "h-screen"
       } w-full`}
     >
       <div className={styles.container}>
