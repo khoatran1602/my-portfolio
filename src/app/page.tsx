@@ -5,21 +5,20 @@ import Link from "next/link";
 import React, { useState } from "react";
 import styles from "./page.module.css";
 import BioPage from "../pages/bio";
+import ExpPage from "@/pages/exp";
 
 const Header = () => {
   const [bioPressed, setBioPressed] = useState(false);
   const [expPressed, setExpPressed] = useState(false);
 
   const bioPress = () => {
-    if (!bioPressed) setBioPressed(true);
-    else setBioPressed(false);
+    setExpPressed(false);
+    setBioPressed(!bioPressed);
   };
 
   const expPress = () => {
-    if (!expPressed) {
-      setBioPressed(false);
-      setExpPressed(true);
-    } else setExpPressed(false);
+    setBioPressed(false);
+    setExpPressed(!expPressed);
   };
 
   return (
@@ -107,7 +106,6 @@ const Header = () => {
                   height="80"
                 />
               </button>
-              {/* {bioPressed && <BioPage />} */}
               <button className="p-5" onClick={expPress}>
                 <Image
                   src="https://assets.codepen.io/9277864/office-work.svg"
@@ -134,6 +132,8 @@ const Header = () => {
               </button>
             </ul>
           </nav>
+          {bioPressed && <BioPage />}
+          {expPressed && <ExpPage />}
         </header>
       </div>
     </div>
