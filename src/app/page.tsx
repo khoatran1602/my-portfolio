@@ -124,7 +124,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <nav className="flex items-center justify-center">
+          <nav className="flex items-center justify-center mt-28 md:mt-0">
             <ul className="">
               <button className="p-5" onClick={bioPress}>
                 <Image

@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         "dm-sans": ["DM Sans", "sans-serif"],
       },
+      gridTemplateColumns: {
+        col4: "repeat(1, minmax(200px, 1fr))",
+      },
     },
   },
   variants: {},
