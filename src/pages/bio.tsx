@@ -88,7 +88,7 @@ const BioPage = () => {
           />
         </a>
         <a
-          href="https://www.linkedin.com/in/tr%E1%BA%A7n-khoa-a27a33184/"
+          href="https://www.linkedin.com/in/tr%E1%BA%A7n-%C4%91%C4%83ng-khoa-a27a33184/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:bg-[#555a60] rounded flex justify-center align-middle"
