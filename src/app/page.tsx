@@ -8,47 +8,19 @@ import BioPage from "../pages/bio";
 import ExpPage from "@/pages/exp";
 import PortfolioPage from "@/pages/portfolio";
 import ContactPage from "@/pages/contact";
+import TabName from "./components/types";
 
 const Header = () => {
-  const [bioPressed, setBioPressed] = useState(false);
-  const [expPressed, setExpPressed] = useState(false);
-  const [portPressed, setPortPressed] = useState(false);
-  const [contactPressed, setContactPressed] = useState(false);
+  const [activeTab, setActiveTab] = useState<TabName | null>(null);
 
-  const bioPress = () => {
-    setExpPressed(false);
-    setPortPressed(false);
-    setContactPressed(false);
-    setBioPressed(!bioPressed);
-  };
-
-  const expPress = () => {
-    setBioPressed(false);
-    setPortPressed(false);
-    setContactPressed(false);
-    setExpPressed(!expPressed);
-  };
-
-  const portPress = () => {
-    setExpPressed(false);
-    setBioPressed(false);
-    setContactPressed(false);
-    setPortPressed(!portPressed);
-  };
-
-  const contactPress = () => {
-    setExpPressed(false);
-    setPortPressed(false);
-    setBioPressed(false);
-    setContactPressed(!contactPressed);
+  const handleTabClick = (tab: TabName) => {
+    setActiveTab(tab === activeTab ? null : tab);
   };
 
   return (
     <div
       className={`flex flex-col text-[color4] bg-[color3] overflow-x-hidden ${
-        bioPressed || expPressed || portPressed || contactPressed
-          ? "h-full"
-          : "h-screen"
+        activeTab ? "h-full" : "h-screen"
       } w-full`}
     >
       <div className={styles.container}>
@@ -126,7 +98,7 @@ const Header = () => {
           </div>
           <nav className="flex items-center justify-center mt-28 md:mt-0">
             <ul className="">
-              <button className="p-5" onClick={bioPress}>
+              <button className="p-5" onClick={() => handleTabClick("bio")}>
                 <Image
                   src="https://assets.codepen.io/9277864/about-me.svg"
                   alt="Bio"
@@ -135,7 +107,10 @@ const Header = () => {
                 />
                 <p className="font-bold">Bio</p>
               </button>
-              <button className="p-5" onClick={expPress}>
+              <button
+                className="p-5"
+                onClick={() => handleTabClick("experience")}
+              >
                 <Image
                   src="https://assets.codepen.io/9277864/office-work.svg"
                   alt="Experience"
@@ -144,7 +119,10 @@ const Header = () => {
                 />
                 <p className="font-bold">Experience</p>
               </button>
-              <button className="p-5" onClick={portPress}>
+              <button
+                className="p-5"
+                onClick={() => handleTabClick("portfolio")}
+              >
                 <Image
                   src="https://assets.codepen.io/9277864/page.svg"
                   alt="Portfolio"
@@ -153,7 +131,7 @@ const Header = () => {
                 />
                 <p className="font-bold">Portfolio</p>
               </button>
-              <button className="p-5" onClick={contactPress}>
+              <button className="p-5" onClick={() => handleTabClick("contact")}>
                 <Image
                   src="https://assets.codepen.io/9277864/contact.svg"
                   alt="Contact"
@@ -164,10 +142,14 @@ const Header = () => {
               </button>
             </ul>
           </nav>
-          {bioPressed && <BioPage />}
+          {/* {bioPressed && <BioPage />}
           {expPressed && <ExpPage />}
           {portPressed && <PortfolioPage />}
-          {contactPressed && <ContactPage />}
+          {contactPressed && <ContactPage />} */}
+          {activeTab === "bio" && <BioPage />}
+          {activeTab === "experience" && <ExpPage />}
+          {activeTab === "portfolio" && <PortfolioPage />}
+          {activeTab === "contact" && <ContactPage />}
         </header>
       </div>
     </div>
