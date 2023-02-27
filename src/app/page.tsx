@@ -142,10 +142,6 @@ const Header = () => {
               </button>
             </ul>
           </nav>
-          {/* {bioPressed && <BioPage />}
-          {expPressed && <ExpPage />}
-          {portPressed && <PortfolioPage />}
-          {contactPressed && <ContactPage />} */}
           {activeTab === "bio" && <BioPage />}
           {activeTab === "experience" && <ExpPage />}
           {activeTab === "portfolio" && <PortfolioPage />}
