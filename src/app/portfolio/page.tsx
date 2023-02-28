@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const PortfolioPage = () => {
+const Page = () => {
   return (
     <div className="grid grid-cols-col4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-10">
       <div className="border border-black rounded-md grid grid-cols-1 grid-rows-2">
@@ -83,4 +83,4 @@ const PortfolioPage = () => {
   );
 };
 
-export default PortfolioPage;
+export default Page;

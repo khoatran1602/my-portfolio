@@ -1,8 +1,10 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import * as Popover from "@radix-ui/react-popover";
 
-const BioPage = () => {
+const Page = () => {
   return (
     <div className="flex flex-col ml-40 mr-10">
       <p>
@@ -127,4 +129,4 @@ const BioPage = () => {
   );
 };
 
-export default BioPage;
+export default Page;

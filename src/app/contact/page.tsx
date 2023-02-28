@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 
-const ContactPage = () => {
+const Page = () => {
   return (
     <div className="flex flex-col h-screen mr-50 md:ml-96">
       <h2 className="font-bold text-lg mb-3">Contact</h2>
@@ -58,4 +60,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Page;
