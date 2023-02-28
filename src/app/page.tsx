@@ -8,19 +8,19 @@ import BioPage from "../pages/bio";
 import ExpPage from "@/pages/exp";
 import PortfolioPage from "@/pages/portfolio";
 import ContactPage from "@/pages/contact";
-import TabName from "./components/types";
+import PageName from "./components/types";
 
 const Header = () => {
-  const [activeTab, setActiveTab] = useState<TabName | null>(null);
+  const [activePage, setActivePage] = useState<PageName | null>(null);
 
-  const handleTabClick = (tab: TabName) => {
-    setActiveTab(tab === activeTab ? null : tab);
+  const handleClick = (tab: PageName) => {
+    setActivePage(tab === activePage ? null : tab);
   };
 
   return (
     <div
       className={`flex flex-col text-[color4] bg-[color3] overflow-x-hidden ${
-        activeTab ? "h-full" : "h-screen"
+        activePage ? "h-full" : "h-screen"
       } w-full`}
     >
       <div className={styles.container}>
@@ -98,7 +98,7 @@ const Header = () => {
           </div>
           <nav className="flex items-center justify-center mt-28 md:mt-0">
             <ul className="">
-              <button className="p-5" onClick={() => handleTabClick("bio")}>
+              <button className="p-5" onClick={() => handleClick("bio")}>
                 <Image
                   src="https://assets.codepen.io/9277864/about-me.svg"
                   alt="Bio"
@@ -107,10 +107,7 @@ const Header = () => {
                 />
                 <p className="font-bold">Bio</p>
               </button>
-              <button
-                className="p-5"
-                onClick={() => handleTabClick("experience")}
-              >
+              <button className="p-5" onClick={() => handleClick("experience")}>
                 <Image
                   src="https://assets.codepen.io/9277864/office-work.svg"
                   alt="Experience"
@@ -119,10 +116,7 @@ const Header = () => {
                 />
                 <p className="font-bold">Experience</p>
               </button>
-              <button
-                className="p-5"
-                onClick={() => handleTabClick("portfolio")}
-              >
+              <button className="p-5" onClick={() => handleClick("portfolio")}>
                 <Image
                   src="https://assets.codepen.io/9277864/page.svg"
                   alt="Portfolio"
@@ -131,7 +125,7 @@ const Header = () => {
                 />
                 <p className="font-bold">Portfolio</p>
               </button>
-              <button className="p-5" onClick={() => handleTabClick("contact")}>
+              <button className="p-5" onClick={() => handleClick("contact")}>
                 <Image
                   src="https://assets.codepen.io/9277864/contact.svg"
                   alt="Contact"
@@ -142,10 +136,10 @@ const Header = () => {
               </button>
             </ul>
           </nav>
-          {activeTab === "bio" && <BioPage />}
-          {activeTab === "experience" && <ExpPage />}
-          {activeTab === "portfolio" && <PortfolioPage />}
-          {activeTab === "contact" && <ContactPage />}
+          {activePage === "bio" && <BioPage />}
+          {activePage === "experience" && <ExpPage />}
+          {activePage === "portfolio" && <PortfolioPage />}
+          {activePage === "contact" && <ContactPage />}
         </header>
       </div>
     </div>
