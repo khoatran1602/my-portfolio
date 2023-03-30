@@ -13,7 +13,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="flex flex-col text-[color4] bg-[color3] overflow-x-hidden h-full w-full">
-          <div className={styles.container}>
+          <div className="border-black border-opacity-20 shadow-2xl bg-color2 h-full relative pb-30">
             <header>
               <div className="relative h-full pb-30 border bg-[color2] mx-auto">
                 <div className="relative">

@@ -18,7 +18,6 @@ const Header = () => {
 
   return (
     //use router with better performance
-
     <>
       <Page />
     </>
