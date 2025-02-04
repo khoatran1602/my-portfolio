@@ -2,12 +2,23 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/components/animations";
+
+const MotionDiv = motion.div;
 
 const Page = () => {
   return (
-    <div className="flex flex-col h-screen mr-50 md:ml-96">
-      <h2 className="font-bold text-lg mb-3">Contact</h2>
-      <div>
+    <MotionDiv
+      variants={staggerContainer}
+      initial="initial"
+      animate="animate"
+      className="flex flex-col h-screen mr-50 md:ml-96"
+    >
+      <MotionDiv variants={fadeInUp} className="font-bold text-lg mb-3">
+        Contact
+      </MotionDiv>
+      <MotionDiv variants={fadeInUp}>
         <div className="flex flex-row mb-5">
           <p className="p-1 pr-7 border-r border-gray-800 md:pr-5">
             <Image
@@ -55,8 +66,8 @@ const Page = () => {
             </a>
           </div>
         </div>
-      </div>
-    </div>
+      </MotionDiv>
+    </MotionDiv>
   );
 };
 

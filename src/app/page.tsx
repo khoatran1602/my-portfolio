@@ -1,5 +1,6 @@
 "use client";
-
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./page.module.css";
@@ -7,7 +8,6 @@ import ExpPage from "@/app/exp/page";
 import PortfolioPage from "@/app/portfolio/page";
 import ContactPage from "@/app/contact/page";
 import TabName from "./components/types";
-import Page from "./bio/page";
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState<TabName | null>(null);
@@ -21,6 +21,26 @@ const Header = () => {
     <>
       <Page />
     </>
+  );
+};
+
+const Page = () => {
+  return (
+    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-4">
+      <motion.div 
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        className="md:w-1/2 text-center md:text-left"
+      >
+        {/* Wrap existing content with AnimatedSection */}
+        <AnimatedSection delay={0.2}>
+          <h1 className="text-4xl font-bold mb-4">Hello, I'm Your Name</h1>
+        </AnimatedSection>
+        <AnimatedSection delay={0.4}>
+          <p className="text-xl mb-6">Cloud Engineer | Developer</p>
+        </AnimatedSection>
+      </motion.div>
+    </div>
   );
 };
 

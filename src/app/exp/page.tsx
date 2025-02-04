@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { ClientMotionDiv, ClientMotionH1 } from "@/components/ClientMotionDiv";
 
 const experiences = [
   {
@@ -28,17 +28,17 @@ const experiences = [
 const Page = () => {
   return (
     <div className="flex flex-col px-4 md:px-20 lg:px-40 py-10 min-h-screen">
-      <motion.h1
+      <ClientMotionH1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-4xl font-bold text-black mb-10"
       >
         Professional Experience
-      </motion.h1>
+      </ClientMotionH1>
 
       <div className="relative">
         {experiences.map((exp, index) => (
-          <motion.div
+          <ClientMotionDiv
             key={index}
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -61,7 +61,7 @@ const Page = () => {
                 ))}
               </ul>
             </div>
-          </motion.div>
+          </ClientMotionDiv>
         ))}
       </div>
     </div>

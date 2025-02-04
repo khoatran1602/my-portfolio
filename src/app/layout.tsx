@@ -19,7 +19,7 @@ export default function RootLayout({
                   <div className="flex justify-center py-30 pb-5">
                     <Image
                       className="rounded-full shadow-xl w-32 h-32"
-                      src="/avatar.png"
+                      src="/avatar_peter.jpg"
                       alt="Khoa Tran"
                       width="100"
                       height="100"
@@ -30,9 +30,10 @@ export default function RootLayout({
                       Khoa Tran
                     </h1>
                     <p className="text-sm font-bold tracking-tight text-[#2b2c48] mb-5">
-                      Full Stack Developer <br />
+                      Software && Cloud Engineer <br />
                       [Front-end: HTML, CSS, TypeScript] <br />
-                      [Back-end: Java]
+                      [Back-end: Java] <br />
+                      [Cloud: AWS, Azure] <br />
                     </p>
                     <div className="flex justify-center">
                       <Image
