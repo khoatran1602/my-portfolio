@@ -238,9 +238,7 @@ const Page = () => {
                   especially on Github, kept in touch, and shared how we live
                   this life.
                 </p>
-                <p>
-                  Let&apos;s work together to build something amazing!
-                </p>
+                <p>Let&apos;s work together to build something amazing!</p>
               </div>
             </div>
           </div>
