@@ -27,11 +27,11 @@ const experiences = [
 
 const Page = () => {
   return (
-    <div className="flex flex-col px-4 md:px-20 lg:px-40 py-10 min-h-screen">
+    <div className="flex flex-col px-4 md:px-20 lg:px-40 py-10 min-h-screen bg-white dark:bg-gray-900">
       <ClientMotionH1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-4xl font-bold text-black mb-10"
+        className="text-4xl font-bold text-gray-900 dark:text-white mb-10"
       >
         Professional Experience
       </ClientMotionH1>
@@ -45,15 +45,14 @@ const Page = () => {
             transition={{ delay: index * 0.2 }}
             className="mb-10 ml-4 relative"
           >
-            {/* Adjusted point position to align with content center */}
             <div className="absolute w-3 h-3 bg-blue-500 rounded-full left-[-5px] transform -translate-y-1/2" />
             <div className="border-l-2 border-gray-600 pl-6 pb-6">
-              <h3 className="text-xl font-semibold text-blue-400">
+              <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
                 {exp.title}
               </h3>
-              <p className="text-black">{exp.company}</p>
-              <p className="text-sm text-black mb-2">{exp.period}</p>
-              <ul className="list-disc list-inside text-black">
+              <p className="text-gray-900 dark:text-gray-200">{exp.company}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{exp.period}</p>
+              <ul className="list-disc list-inside text-gray-800 dark:text-gray-300">
                 {exp.description.map((item, idx) => (
                   <li key={idx} className="mb-1">
                     {item}
