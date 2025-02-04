@@ -40,9 +40,6 @@ export default function RootLayout({
                     </h1>
                     <p className="text-sm font-bold tracking-tight text-[#2b2c48] dark:text-gray-200 mb-5">
                       Software && Cloud Engineer <br />
-                      [Front-end: HTML, CSS, TypeScript] <br />
-                      [Back-end: Java] <br />
-                      [Cloud: AWS, Azure] <br />
                     </p>
                     <div className="flex justify-center">
                       <Image
