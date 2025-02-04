@@ -1,7 +1,7 @@
 import "./globals.css";
 import Image from "next/image";
 import React from "react";
-import styles from "./page.module.css";
+import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 
 export default function RootLayout({
@@ -138,6 +138,7 @@ export default function RootLayout({
             </header>
           </div>
         </div>
+        <Analytics />
       </body>
     </html>
   );
