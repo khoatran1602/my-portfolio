@@ -1,10 +1,10 @@
-'use client';
+"use client";
 import "./globals.css";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import Navbar from '@/components/Navbar';
+import Navbar from "@/components/Navbar";
 
 export default function RootLayout({
   children,
@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    const theme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', theme);
+    const theme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", theme);
   }, []);
 
   return (
@@ -48,6 +48,7 @@ export default function RootLayout({
                         width="25"
                         height="25"
                       />
+                      <br />
                     </div>
                   </div>
                   <div className="absolute top-1 left-2 p-4 flex flex-col gap-10 opacity-40">
