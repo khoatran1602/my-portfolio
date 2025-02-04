@@ -59,12 +59,13 @@ const Page = () => {
       <motion.div
         initial={{ scale: 0.95 }}
         animate={{ scale: 1 }}
-        className="bg-white rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-white dark:bg-gray-800 rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e: MouseEvent) => e.stopPropagation()}
+
       >
         <div className="flex justify-between items-start mb-4">
-          <h2 className="text-2xl font-bold">{project.title}</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{project.title}</h2>
+          <button onClick={onClose} className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
             ✕
           </button>
         </div>
@@ -75,12 +76,12 @@ const Page = () => {
           height={300}
           className="rounded-lg mb-4"
         />
-        <p className="mb-4">{project.description}</p>
+        <p className="mb-4 text-gray-700 dark:text-gray-300">{project.description}</p>
         <div className="mb-4">
-          <h3 className="font-bold mb-2">Tech Stack</h3>
+          <h3 className="font-bold mb-2 text-gray-900 dark:text-white">Tech Stack</h3>
           <div className="flex flex-wrap gap-2">
             {project.techStack.map((tech, index) => (
-              <span key={index} className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+              <span key={index} className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">
                 {tech}
               </span>
             ))}
@@ -109,11 +110,11 @@ const Page = () => {
       variants={staggerContainer}
       initial="initial"
       animate="animate"
-      className="min-h-screen p-8"
+      className="min-h-screen p-8 bg-gray-50 dark:bg-gray-900"
     >
       <motion.h1
         variants={fadeInUp}
-        className="text-4xl font-bold mb-8"
+        className="text-4xl font-bold mb-8 text-gray-900 dark:text-white"
       >
         Portfolio
       </motion.h1>
@@ -125,10 +126,10 @@ const Page = () => {
           <motion.div
             key={index}
             variants={fadeInUp}
-            className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 cursor-pointer"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 cursor-pointer"
             onClick={() => setSelectedProject(item)}
           >
-            <div className="border border-black rounded-md">
+            <div className="border border-gray-200 dark:border-gray-700 rounded-md">
               <div className="bg-[#2d4059] p-4">
                 <Image
                   src={item.imageSrc}
@@ -139,16 +140,16 @@ const Page = () => {
                 />
               </div>
               <div className="p-5">
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-gray-600 line-clamp-3">{item.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 line-clamp-3">{item.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {item.techStack.slice(0, 3).map((tech, idx) => (
-                    <span key={idx} className="bg-gray-100 px-2 py-1 rounded-full text-sm">
+                    <span key={idx} className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded-full text-sm">
                       {tech}
                     </span>
                   ))}
                   {item.techStack.length > 3 && (
-                    <span className="text-sm text-gray-500">+{item.techStack.length - 3} more</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">+{item.techStack.length - 3} more</span>
                   )}
                 </div>
               </div>

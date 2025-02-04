@@ -1,13 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-
-    // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', // Changed to simple class-based
   theme: {
     extend: {
       fontFamily: {
@@ -16,23 +12,16 @@ module.exports = {
       gridTemplateColumns: {
         col4: "repeat(1, minmax(200px, 1fr))",
       },
+      colors: {
+        color1: "var(--color1)",
+        color2: "var(--color2)",
+        color3: "var(--color3)",
+        color4: "var(--color4)",
+        color5: "var(--color5)",
+        color6: "var(--color6)",
+        color7: "var(--color7)",
+      },
     },
   },
-  variants: {},
   plugins: [],
-  colors: {
-    color1: "#ee7344",
-    /* Container background color */
-    color2: "#e8ded2",
-    /* Body background color */
-    color3: "#776d8a",
-    /* Color of title */
-    color4: "#2b2c48",
-    /* Default font color */
-    color5: "#212241",
-    /* Page underline color */
-    color6: "#1d9bf0",
-    /* Hover background color */
-    color7: "#0f1419",
-  },
 };

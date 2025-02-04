@@ -1,20 +1,29 @@
+'use client';
 import "./globals.css";
+import { useEffect } from 'react';
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import Navbar from '@/components/Navbar';
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  useEffect(() => {
+    const theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  }, []);
+
   return (
     <html lang="en">
-      <body>
-        <div className="flex flex-col text-[color4] bg-[color3] overflow-x-hidden h-full w-full">
-          <div className="border-black border-opacity-20 shadow-2xl bg-color2 h-full relative pb-30">
+      <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+        <Navbar />
+        <div className="flex flex-col bg-gray-50 dark:bg-gray-800 overflow-x-hidden h-full w-full">
+          <div className="border-black border-opacity-20 shadow-2xl bg-white dark:bg-gray-700 h-full relative pb-30">
             <header>
-              <div className="relative h-full pb-30 border bg-[color2] mx-auto">
+              <div className="relative h-full pb-30 border bg-[color2] dark:bg-gray-700 mx-auto">
                 <div className="relative">
                   <div className="flex justify-center py-30 pb-5">
                     <Image
@@ -26,10 +35,10 @@ export default function RootLayout({
                     />
                   </div>
                   <div className="text-center">
-                    <h1 className="text-2xl font-dm-sans tracking-tight font-bold">
+                    <h1 className="text-2xl font-dm-sans tracking-tight font-bold dark:text-white">
                       Khoa Tran
                     </h1>
-                    <p className="text-sm font-bold tracking-tight text-[#2b2c48] mb-5">
+                    <p className="text-sm font-bold tracking-tight text-[#2b2c48] dark:text-gray-200 mb-5">
                       Software && Cloud Engineer <br />
                       [Front-end: HTML, CSS, TypeScript] <br />
                       [Back-end: Java] <br />
@@ -96,7 +105,7 @@ export default function RootLayout({
                         width="80"
                         height="80"
                       />
-                      <p className="font-bold">Bio</p>
+                      <p className="font-bold dark:text-white">Bio</p>
                     </button>
                   </Link>
                   <Link href="/exp">
@@ -107,7 +116,7 @@ export default function RootLayout({
                         width="80"
                         height="80"
                       />
-                      <p className="font-bold">Experience</p>
+                      <p className="font-bold dark:text-white">Experience</p>
                     </button>
                   </Link>
                   <Link href="/portfolio">
@@ -118,7 +127,7 @@ export default function RootLayout({
                         width="80"
                         height="80"
                       />
-                      <p className="font-bold">Portfolio</p>
+                      <p className="font-bold dark:text-white">Portfolio</p>
                     </button>
                   </Link>
                   <Link href="/contact">
@@ -129,7 +138,7 @@ export default function RootLayout({
                         width="80"
                         height="80"
                       />
-                      <p className="font-bold">Contact</p>
+                      <p className="font-bold dark:text-white">Contact</p>
                     </button>
                   </Link>
                 </ul>

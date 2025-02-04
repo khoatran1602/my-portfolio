@@ -2,18 +2,32 @@
 
 import React from "react";
 import Image from "next/image";
-import * as Popover from "@radix-ui/react-popover";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/components/animations";
 
-const skills = [
-  { name: "Java", level: "Advanced" },
-  { name: "TypeScript", level: "Advanced" },
-  { name: "React", level: "Advanced" },
-  { name: "NextJS", level: "Intermediate" },
-  { name: "PostgreSQL", level: "Intermediate" },
-  { name: "Redis", level: "Basic" },
-];
+const skills = {
+  backend: [
+    { name: "Java", level: "Advanced" },
+    { name: "PostgreSQL", level: "Intermediate" },
+    { name: "Redis", level: "Basic" },
+  ],
+  frontend: [
+    { name: "TypeScript", level: "Intermediate" },
+    { name: "React", level: "Intermediate" },
+    { name: "NextJS", level: "Intermediate" },
+    { name: "HTML/CSS", level: "Intermediate" },
+  ],
+  cloud: [
+    { name: "AWS", level: "Intermediate" },
+    { name: "Azure", level: "Basic" },
+    { name: "Docker", level: "Intermediate" },
+    { name: "Terraform", level: "Basic" },
+    { name: "Ansible", level: "Basic" },
+    { name: "Kubernates", level: "Basic" },
+    { name: "Bash Script", level: "Intermediate" },
+    { name: "Jenkins", level: "Intermediate" },
+  ],
+};
 
 const socialLinks = [
   {
@@ -49,7 +63,7 @@ const Page = () => {
       variants={staggerContainer}
       initial="initial"
       animate="animate"
-      className="min-h-screen p-8 max-w-6xl mx-auto"
+      className="min-h-screen p-8 max-w-6xl mx-auto bg-gray-50 dark:bg-gray-900"
     >
       <motion.div
         variants={fadeInUp}
@@ -59,7 +73,7 @@ const Page = () => {
         <div className="md:col-span-4">
           <motion.div
             variants={fadeInUp}
-            className="sticky top-8 bg-white rounded-xl shadow-lg p-6"
+            className="sticky top-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
           >
             <div className="relative w-48 h-48 mx-auto mb-4">
               <Image
@@ -69,26 +83,84 @@ const Page = () => {
                 className="rounded-full object-cover"
               />
             </div>
-            <h2 className="text-2xl font-bold text-center mb-4">Khoa Tran</h2>
+            <h2 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+              Khoa Tran
+            </h2>
 
             {/* Skills Section */}
             <div className="mb-6">
-              <h3 className="font-semibold mb-3">Technical Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    className="group relative"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <span className="px-3 py-1 bg-gray-100 rounded-full text-sm cursor-help">
-                      {skill.name}
-                    </span>
-                    <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                      {skill.level}
-                    </span>
-                  </motion.div>
-                ))}
+              <h3 className="font-semibold mb-3 text-gray-900 dark:text-white">
+                Technical Skills
+              </h3>
+              <div className="space-y-4">
+                {/* Backend Skills */}
+                <div>
+                  <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
+                    Backend
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.backend.map((skill, index) => (
+                      <motion.div
+                        key={skill.name}
+                        className="group relative"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm cursor-help">
+                          {skill.name}
+                        </span>
+                        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                          {skill.level}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Frontend Skills */}
+                <div>
+                  <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
+                    Frontend
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.frontend.map((skill, index) => (
+                      <motion.div
+                        key={skill.name}
+                        className="group relative"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm cursor-help">
+                          {skill.name}
+                        </span>
+                        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                          {skill.level}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Cloud Skills */}
+                <div>
+                  <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
+                    Cloud & DevOps
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.cloud.map((skill, index) => (
+                      <motion.div
+                        key={skill.name}
+                        className="group relative"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm cursor-help">
+                          {skill.name}
+                        </span>
+                        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                          {skill.level}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -117,10 +189,12 @@ const Page = () => {
 
         {/* Content Section */}
         <motion.div variants={fadeInUp} className="md:col-span-8 space-y-6">
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <h1 className="text-4xl font-bold mb-6">About Me</h1>
-            <div className="prose max-w-none">
-              <div className="flex flex-col ml-40 mr-10">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+            <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+              About Me
+            </h1>
+            <div className="prose max-w-none dark:prose-invert">
+              <div className="flex flex-col text-gray-800 dark:text-gray-200 text-justify">
                 <p>
                   <span>🙋‍♂️</span> Hi lovely/handsome person,
                 </p>
@@ -174,37 +248,45 @@ const Page = () => {
           {/* Experience Timeline */}
           <motion.div
             variants={fadeInUp}
-            className="bg-white rounded-xl shadow-lg p-6"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
           >
-            <h2 className="text-2xl font-bold mb-6">Education</h2>
+            <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+              Education
+            </h2>
             <div className="space-y-8">
               <div className="flex gap-6">
                 <div className="w-1 bg-blue-500 rounded"></div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     Bachelor of Software Engineering
                   </h3>
-                  <h4 className="text-lg font-medium text-blue-600 mb-2">
+                  <h4 className="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">
                     Honours First Class (H1) Graduate
                   </h4>
-                  <p className="text-gray-600 mb-1">RMIT University</p>
-                  <p className="text-gray-500 text-sm">2020 - 2024</p>
+                  <p className="text-gray-600 dark:text-gray-300 mb-1">
+                    RMIT University
+                  </p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">
+                    2020 - 2024
+                  </p>
                 </div>
               </div>
 
               <div className="flex gap-6">
                 <div className="w-1 bg-blue-500 rounded"></div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     Bachelor of English Studies
                   </h3>
-                  <h4 className="text-lg font-medium text-blue-600 mb-2">
+                  <h4 className="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">
                     English Language and Literature
                   </h4>
-                  <p className="text-gray-600 mb-1">
+                  <p className="text-gray-600 dark:text-gray-300 mb-1">
                     Ho Chi Minh City University of Education (HCMUE)
                   </p>
-                  <p className="text-gray-500 text-sm">2016 - 2020</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">
+                    2016 - 2020
+                  </p>
                 </div>
               </div>
             </div>
@@ -213,10 +295,12 @@ const Page = () => {
           {/* Contact Section */}
           <motion.div
             variants={fadeInUp}
-            className="bg-white rounded-xl shadow-lg p-6"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
           >
-            <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-            <p className="mb-4">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+              Get in Touch
+            </h2>
+            <p className="mb-4 text-gray-800 dark:text-gray-200">
               I&apos;m always excited to connect and collaborate on interesting
               projects.
             </p>
