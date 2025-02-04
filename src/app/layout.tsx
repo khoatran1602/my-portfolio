@@ -21,9 +21,9 @@ export default function RootLayout({
       <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
         <Navbar />
         <div className="flex flex-col bg-gray-50 dark:bg-gray-800 overflow-x-hidden h-full w-full">
-          <div className="border-black border-opacity-20 shadow-2xl bg-white dark:bg-gray-700 h-full relative pb-30">
+          <div className="border-black/10 dark:border-gray-700 shadow-2xl bg-white dark:bg-gray-700 h-full relative pb-30">
             <header>
-              <div className="relative h-full pb-30 border bg-[color2] dark:bg-gray-700 mx-auto">
+              <div className="relative h-full pb-30 border-gray-200 dark:border-gray-700 bg-[color2] dark:bg-gray-700 mx-auto">
                 <div className="relative">
                   <div className="flex justify-center py-30 pb-5">
                     <Image
@@ -38,10 +38,10 @@ export default function RootLayout({
                     <h1 className="text-2xl font-dm-sans tracking-tight font-bold dark:text-white">
                       Khoa Tran
                     </h1>
-                    <p className="text-sm font-bold tracking-tight text-[#2b2c48] dark:text-gray-200 mb-5">
-                      Software && Cloud Engineer <br />
+                    <p className="text-sm font-bold tracking-tight text-[#2b2c48] dark:text-gray-200 mb-2 mt-2">
+                      Software && Cloud Engineer
                     </p>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center mb-[-10px]">
                       <Image
                         src="https://assets.codepen.io/9277864/mood-rock.svg"
                         alt="Rock"
