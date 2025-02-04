@@ -85,7 +85,7 @@ const Page = () => {
           height={300}
           className="rounded-lg mb-4"
         />
-        <p className="mb-4 text-gray-700 dark:text-gray-300">
+        <p className="mb-4 text-gray-700 dark:text-gray-300 text-justify">
           {project.description}
         </p>
         <div className="mb-4">
