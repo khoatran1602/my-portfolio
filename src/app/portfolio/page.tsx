@@ -129,7 +129,7 @@ const Page = () => {
             className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 cursor-pointer"
             onClick={() => setSelectedProject(item)}
           >
-            <div className="border border-gray-200 dark:border-gray-700 rounded-md">
+            <div className="border border-gray-200 dark:border-gray-700 rounded-md h-full flex flex-col">
               <div className="bg-[#2d4059] p-4">
                 <Image
                   src={item.imageSrc}
@@ -139,18 +139,31 @@ const Page = () => {
                   className="w-full h-auto rounded"
                 />
               </div>
-              <div className="p-5">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{item.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 line-clamp-3">{item.description}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {item.techStack.slice(0, 3).map((tech, idx) => (
-                    <span key={idx} className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded-full text-sm">
-                      {tech}
-                    </span>
-                  ))}
-                  {item.techStack.length > 3 && (
-                    <span className="text-sm text-gray-500 dark:text-gray-400">+{item.techStack.length - 3} more</span>
-                  )}
+              <div className="p-5 flex-grow flex flex-col">
+                <div className="flex-grow">
+                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
+                    {item.description}
+                  </p>
+                </div>
+                <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
+                  <div className="flex flex-wrap gap-2">
+                    {item.techStack.slice(0, 3).map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {item.techStack.length > 3 && (
+                      <span className="text-sm text-gray-500 dark:text-gray-400">
+                        +{item.techStack.length - 3} more
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
