@@ -34,7 +34,7 @@ const Page = () => {
       >
         {/* Wrap existing content with AnimatedSection */}
         <AnimatedSection delay={0.2}>
-          <h1 className="text-4xl font-bold mb-4">Hello, I'm Your Name</h1>
+          <h1 className="text-4xl font-bold mb-4">Hello, I&apos;m Your Name</h1>
         </AnimatedSection>
         <AnimatedSection delay={0.4}>
           <p className="text-xl mb-6">Cloud Engineer | Developer</p>

@@ -1,10 +1,19 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/components/animations";
-import React, { useState } from "react";
+import React, { useState, MouseEvent } from "react";
 import Image from "next/image";
 
-const portfolioItems = [
+interface PortfolioItem {
+  title: string;
+  imageSrc: string;
+  description: string;
+  techStack: string[];
+  demoLink: string;
+  githubLink: string;
+}
+
+const portfolioItems: PortfolioItem[] = [
   {
     title: "Note Me",
     imageSrc: "https://assets.codepen.io/9277864/schedule-milestone-2.svg",
@@ -32,9 +41,14 @@ const portfolioItems = [
 ];
 
 const Page = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
 
-  const ProjectModal = ({ project, onClose }) => (
+  interface ProjectModalProps {
+    project: PortfolioItem;
+    onClose: () => void;
+  }
+
+  const ProjectModal = ({ project, onClose }: ProjectModalProps) => (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -46,7 +60,7 @@ const Page = () => {
         initial={{ scale: 0.95 }}
         animate={{ scale: 1 }}
         className="bg-white rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-        onClick={e => e.stopPropagation()}
+        onClick={(e: MouseEvent) => e.stopPropagation()}
       >
         <div className="flex justify-between items-start mb-4">
           <h2 className="text-2xl font-bold">{project.title}</h2>

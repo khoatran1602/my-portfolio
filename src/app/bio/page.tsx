@@ -164,6 +164,9 @@ const Page = () => {
                   especially on Github, kept in touch, and shared how we live
                   this life.
                 </p>
+                <p>
+                  Let&apos;s work together to build something amazing!
+                </p>
               </div>
             </div>
           </div>
@@ -214,7 +217,7 @@ const Page = () => {
           >
             <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
             <p className="mb-4">
-              I'm always excited to connect and collaborate on interesting
+              I&apos;m always excited to connect and collaborate on interesting
               projects.
             </p>
             <div className="flex justify-center gap-4">
