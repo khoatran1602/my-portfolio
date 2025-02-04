@@ -17,7 +17,8 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Note Me",
     imageSrc: "https://assets.codepen.io/9277864/schedule-milestone-2.svg",
-    description: "Note Me is a real-time note-taking and drawing tool for teams. It uses React, Java, and PostgreSQL. To synchronize user activity, the application uses socket technology. Note Me makes it easy to brainstorm, plan, and cooperate.",
+    description:
+      "Note Me is a real-time note-taking and drawing tool for teams. It uses React, Java, and PostgreSQL. To synchronize user activity, the application uses socket technology. Note Me makes it easy to brainstorm, plan, and cooperate.",
     techStack: ["React", "Java", "PostgreSQL", "WebSocket"],
     demoLink: "#",
     githubLink: "#",
@@ -25,7 +26,8 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Hire Me",
     imageSrc: "https://assets.codepen.io/9277864/designer-desk-1.svg",
-    description: "Hire Me makes it simple for job seekers to create professional resumes that showcase their skills. The website application is created using Next.js on the front end and Java on the back end, utilizing a PostgreSQL database and Redis for speed enhancements. Firebase login and sign-up tools simplify the process. Hire Me uses microservices for user and CV management and an API Gateway for efficient routing. Users can simply produce and download PDF copies of their resumes with Hire Me, making it simpler than ever to apply for jobs and stand out in the job market.",
+    description:
+      "Hire Me makes it simple for job seekers to create professional resumes that showcase their skills. The website application is created using Next.js on the front end and Java on the back end, utilizing a PostgreSQL database and Redis for speed enhancements. Firebase login and sign-up tools simplify the process. Hire Me uses microservices for user and CV management and an API Gateway for efficient routing. Users can simply produce and download PDF copies of their resumes with Hire Me, making it simpler than ever to apply for jobs and stand out in the job market.",
     techStack: ["Next.js", "Java", "PostgreSQL", "Redis", "Firebase"],
     demoLink: "#",
     githubLink: "#",
@@ -33,7 +35,8 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Songify",
     imageSrc: "https://assets.codepen.io/9277864/project-timeline-2.svg",
-    description: "Songify is a web application that allows you to explore and discover new music, create custom playlists, and enjoy your favorite songs anytime, anywhere. As a clone of Spotify, Songify provides a similar user experience to the popular music streaming platform. With a vast music library, easy-to-use interface, and personalized recommendations, Songify is the perfect platform for music lovers to explore and discover new songs and artists. Whether you want to listen to your favorite songs, discover new tracks, or create custom playlists, Songify has something for everyone. Get ready to immerse yourself in the world of music with Songify!",
+    description:
+      "Songify is a web application that allows you to explore and discover new music, create custom playlists, and enjoy your favorite songs anytime, anywhere. As a clone of Spotify, Songify provides a similar user experience to the popular music streaming platform. With a vast music library, easy-to-use interface, and personalized recommendations, Songify is the perfect platform for music lovers to explore and discover new songs and artists. Whether you want to listen to your favorite songs, discover new tracks, or create custom playlists, Songify has something for everyone. Get ready to immerse yourself in the world of music with Songify!",
     techStack: ["React", "Node.js", "Express", "MongoDB"],
     demoLink: "#",
     githubLink: "#",
@@ -41,7 +44,9 @@ const portfolioItems: PortfolioItem[] = [
 ];
 
 const Page = () => {
-  const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
+  const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(
+    null
+  );
 
   interface ProjectModalProps {
     project: PortfolioItem;
@@ -61,11 +66,15 @@ const Page = () => {
         animate={{ scale: 1 }}
         className="bg-white dark:bg-gray-800 rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e: MouseEvent) => e.stopPropagation()}
-
       >
         <div className="flex justify-between items-start mb-4">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{project.title}</h2>
-          <button onClick={onClose} className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            {project.title}
+          </h2>
+          <button
+            onClick={onClose}
+            className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+          >
             ✕
           </button>
         </div>
@@ -76,12 +85,19 @@ const Page = () => {
           height={300}
           className="rounded-lg mb-4"
         />
-        <p className="mb-4 text-gray-700 dark:text-gray-300">{project.description}</p>
+        <p className="mb-4 text-gray-700 dark:text-gray-300">
+          {project.description}
+        </p>
         <div className="mb-4">
-          <h3 className="font-bold mb-2 text-gray-900 dark:text-white">Tech Stack</h3>
+          <h3 className="font-bold mb-2 text-gray-900 dark:text-white">
+            Tech Stack
+          </h3>
           <div className="flex flex-wrap gap-2">
             {project.techStack.map((tech, index) => (
-              <span key={index} className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">
+              <span
+                key={index}
+                className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
+              >
                 {tech}
               </span>
             ))}
@@ -119,9 +135,7 @@ const Page = () => {
         Portfolio
       </motion.h1>
 
-      <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
+      <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {portfolioItems.map((item, index) => (
           <motion.div
             key={index}
@@ -144,7 +158,7 @@ const Page = () => {
                   <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
+                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3 text-justify">
                     {item.description}
                   </p>
                 </div>
@@ -173,9 +187,9 @@ const Page = () => {
 
       <AnimatePresence>
         {selectedProject && (
-          <ProjectModal 
-            project={selectedProject} 
-            onClose={() => setSelectedProject(null)} 
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
           />
         )}
       </AnimatePresence>
