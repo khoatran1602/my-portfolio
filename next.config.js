@@ -6,6 +6,15 @@ const nextConfig = {
   images: {
     domains: ["assets.codepen.io"],
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/bio',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
