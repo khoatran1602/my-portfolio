@@ -104,14 +104,14 @@ const Page = () => {
                   <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
                     Backend
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {skills.backend.map((skill, index) => (
                       <motion.div
                         key={skill.name}
                         className="group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                         whileHover={{
                           scale: 1.05,
-                          transition: { duration: 0.3 },
+                          transition: { duration: 0.1 },
                         }}
                       >
                         <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm cursor-help">
@@ -130,14 +130,14 @@ const Page = () => {
                   <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
                     Frontend
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {skills.frontend.map((skill, index) => (
                       <motion.div
                         key={skill.name}
                         className="group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                         whileHover={{
                           scale: 1.05,
-                          transition: { duration: 0.3 },
+                          transition: { duration: 0.1 },
                         }}
                       >
                         <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm cursor-help">
@@ -156,14 +156,14 @@ const Page = () => {
                   <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
                     Cloud & DevOps
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {skills.cloud.map((skill, index) => (
                       <motion.div
                         key={skill.name}
                         className="group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                         whileHover={{
                           scale: 1.05,
-                          transition: { duration: 0.3 },
+                          transition: { duration: 0.1 },
                         }}
                       >
                         <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm cursor-help">
