@@ -1,0 +1,17 @@
+.project-card {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover img {
+    filter: brightness(1.1);
+}
+
+.project-image {
+    transition: filter 0.3s ease-in-out;
+}

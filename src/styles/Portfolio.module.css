@@ -1,0 +1,27 @@
+.projectCard {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.projectImage {
+  transition: transform 0.3s ease-in-out;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
+}
+
+.projectContent {
+  transition: all 0.3s ease-in-out;
+}
+
+.projectCard:hover .projectContent {
+  background-color: rgba(0, 0, 0, 0.8);
+}

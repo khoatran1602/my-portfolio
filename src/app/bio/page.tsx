@@ -102,8 +102,11 @@ const Page = () => {
                     {skills.backend.map((skill, index) => (
                       <motion.div
                         key={skill.name}
-                        className="group relative"
-                        whileHover={{ scale: 1.05 }}
+                        className="group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                        whileHover={{
+                          scale: 1.05,
+                          transition: { duration: 0.3 },
+                        }}
                       >
                         <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm cursor-help">
                           {skill.name}
@@ -125,8 +128,11 @@ const Page = () => {
                     {skills.frontend.map((skill, index) => (
                       <motion.div
                         key={skill.name}
-                        className="group relative"
-                        whileHover={{ scale: 1.05 }}
+                        className="group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                        whileHover={{
+                          scale: 1.05,
+                          transition: { duration: 0.3 },
+                        }}
                       >
                         <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm cursor-help">
                           {skill.name}
@@ -148,8 +154,11 @@ const Page = () => {
                     {skills.cloud.map((skill, index) => (
                       <motion.div
                         key={skill.name}
-                        className="group relative"
-                        whileHover={{ scale: 1.05 }}
+                        className="group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                        whileHover={{
+                          scale: 1.05,
+                          transition: { duration: 0.3 },
+                        }}
                       >
                         <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm cursor-help">
                           {skill.name}
@@ -167,12 +176,16 @@ const Page = () => {
             {/* Social Links */}
             <div className="flex justify-center gap-4">
               {socialLinks.map((link) => (
-                <a
+                <motion.a
                   key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:bg-[#555a60] rounded flex justify-center align-middle"
+                  className="hover:bg-[#555a60] rounded flex justify-center align-middle transition-all duration-300"
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.2 },
+                  }}
                 >
                   <Image
                     className="mx-5"
@@ -181,7 +194,7 @@ const Page = () => {
                     width="28"
                     height="28"
                   />
-                </a>
+                </motion.a>
               ))}
             </div>
           </motion.div>
@@ -304,12 +317,16 @@ const Page = () => {
             </p>
             <div className="flex justify-center gap-4">
               {socialLinks.map((link) => (
-                <a
+                <motion.a
                   key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:bg-[#555a60] rounded flex justify-center align-middle"
+                  className="hover:bg-[#555a60] rounded flex justify-center align-middle transition-all duration-300"
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.2 },
+                  }}
                 >
                   <Image
                     className="mx-5"
@@ -318,7 +335,7 @@ const Page = () => {
                     width="28"
                     height="28"
                   />
-                </a>
+                </motion.a>
               ))}
             </div>
           </motion.div>

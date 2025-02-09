@@ -140,20 +140,38 @@ const Page = () => {
           <motion.div
             key={index}
             variants={fadeInUp}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 cursor-pointer"
+            className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden
+                     transition-all duration-300 ease-in-out
+                     hover:shadow-2xl hover:shadow-blue-500/10
+                     dark:hover:shadow-blue-400/10
+                     hover:-translate-y-2
+                     group"
             onClick={() => setSelectedProject(item)}
           >
-            <div className="border border-gray-200 dark:border-gray-700 rounded-md h-full flex flex-col">
-              <div className="bg-[#2d4059] p-4">
+            <div
+              className="border border-gray-200 dark:border-gray-700 rounded-md h-full flex flex-col
+                          transition-colors duration-300
+                          hover:border-blue-500/50 dark:hover:border-blue-400/50"
+            >
+              <div className="bg-[#2d4059] p-4 overflow-hidden">
                 <Image
                   src={item.imageSrc}
                   alt={item.title}
                   width={400}
                   height={200}
-                  className="w-full h-auto rounded"
+                  className="w-full h-auto rounded
+                           transition-transform duration-300
+                           group-hover:scale-105"
                 />
               </div>
-              <div className="p-5 flex-grow flex flex-col">
+              <div
+                className="p-5 flex-grow flex flex-col
+                            bg-gradient-to-b from-transparent to-gray-50
+                            dark:to-gray-800/50
+                            transition-colors duration-300
+                            group-hover:to-blue-50
+                            dark:group-hover:to-blue-900/10"
+              >
                 <div className="flex-grow">
                   <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
                     {item.title}

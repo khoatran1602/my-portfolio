@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { motion } from "framer-motion";
 
 export default function RootLayout({
   children,
@@ -94,50 +95,86 @@ export default function RootLayout({
                 </div>
               </div>
               <nav className="flex items-center justify-center mt-28 md:mt-0">
-                <ul className="">
+                <ul className="flex flex-wrap justify-center">
                   <Link href="/bio">
-                    <button className="p-5">
+                    <motion.div
+                      className="p-5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
+                      whileHover={{
+                        scale: 1.1,
+                        y: -5,
+                        transition: { duration: 0.1 },
+                      }}
+                    >
                       <Image
                         src="https://assets.codepen.io/9277864/about-me.svg"
                         alt="Bio"
                         width="80"
                         height="80"
                       />
-                      <p className="font-bold dark:text-white">Bio</p>
-                    </button>
+                      <p className="font-bold dark:text-white text-center">
+                        Bio
+                      </p>
+                    </motion.div>
                   </Link>
                   <Link href="/exp">
-                    <button className="p-5">
+                    <motion.div
+                      className="p-5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
+                      whileHover={{
+                        scale: 1.1,
+                        y: -5,
+                        transition: { duration: 0.1 },
+                      }}
+                    >
                       <Image
                         src="https://assets.codepen.io/9277864/office-work.svg"
                         alt="Experience"
                         width="80"
                         height="80"
                       />
-                      <p className="font-bold dark:text-white">Experience</p>
-                    </button>
+                      <p className="font-bold dark:text-white text-center">
+                        Experience
+                      </p>
+                    </motion.div>
                   </Link>
                   <Link href="/portfolio">
-                    <button className="p-5">
+                    <motion.div
+                      className="p-5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
+                      whileHover={{
+                        scale: 1.1,
+                        y: -5,
+                        transition: { duration: 0.1 },
+                      }}
+                    >
                       <Image
                         src="https://assets.codepen.io/9277864/page.svg"
                         alt="Portfolio"
                         width="80"
                         height="80"
                       />
-                      <p className="font-bold dark:text-white">Portfolio</p>
-                    </button>
+                      <p className="font-bold dark:text-white text-center">
+                        Portfolio
+                      </p>
+                    </motion.div>
                   </Link>
                   <Link href="/contact">
-                    <button className="p-5">
+                    <motion.div
+                      className="p-5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
+                      whileHover={{
+                        scale: 1.1,
+                        y: -5,
+                        transition: { duration: 0.1 },
+                      }}
+                    >
                       <Image
                         src="https://assets.codepen.io/9277864/contact.svg"
                         alt="Contact"
                         width="80"
                         height="80"
                       />
-                      <p className="font-bold dark:text-white">Contact</p>
-                    </button>
+                      <p className="font-bold dark:text-white text-center">
+                        Contact
+                      </p>
+                    </motion.div>
                   </Link>
                 </ul>
               </nav>
