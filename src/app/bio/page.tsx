@@ -73,7 +73,13 @@ const Page = () => {
         <div className="md:col-span-4">
           <motion.div
             variants={fadeInUp}
-            className="sticky top-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+            className="sticky top-8 bg-gradient-to-br from-white via-white to-gray-50
+                     dark:from-gray-800 dark:via-gray-800 dark:to-gray-900
+                     rounded-xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)]
+                     dark:shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]
+                     p-6 border border-gray-100 dark:border-gray-700
+                     hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.2)]
+                     transition-all duration-500 ease-out"
           >
             <div className="relative w-48 h-48 mx-auto mb-4">
               <Image
@@ -181,19 +187,37 @@ const Page = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:bg-[#555a60] rounded flex justify-center align-middle transition-all duration-300"
+                  className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 
+                           rounded-lg transition-all duration-300 
+                           hover:shadow-lg hover:shadow-blue-500/20
+                           relative group"
                   whileHover={{
-                    scale: 1.1,
+                    scale: 1.15,
+                    rotate: 5,
                     transition: { duration: 0.2 },
                   }}
                 >
+                  <div
+                    className="absolute inset-0 bg-blue-400/20 rounded-lg 
+                                blur-xl group-hover:blur-2xl transition-all 
+                                duration-300 opacity-0 group-hover:opacity-100"
+                  />
                   <Image
-                    className="mx-5"
+                    className="relative z-10 transition-transform duration-300 
+                             group-hover:transform group-hover:translate-y-[-2px]"
                     src={link.icon}
                     alt={link.name}
                     width="28"
                     height="28"
                   />
+                  <span
+                    className="absolute bottom-full left-1/2 transform -translate-x-1/2 
+                                 bg-gray-800 text-white text-xs px-2 py-1 rounded 
+                                 opacity-0 group-hover:opacity-100 transition-opacity 
+                                 mb-2 whitespace-nowrap"
+                  >
+                    {link.name}
+                  </span>
                 </motion.a>
               ))}
             </div>
@@ -202,7 +226,17 @@ const Page = () => {
 
         {/* Content Section */}
         <motion.div variants={fadeInUp} className="md:col-span-8 space-y-6">
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+          {/* About Me Section */}
+          <div
+            className="bg-gradient-to-br from-white via-white to-gray-50
+                         dark:from-gray-800 dark:via-gray-800 dark:to-gray-900
+                         rounded-xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)]
+                         dark:shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]
+                         p-6 border border-gray-100 dark:border-gray-700
+                         hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.2)]
+                         transition-all duration-500 ease-out
+                         hover:border-blue-100 dark:hover:border-blue-900/30"
+          >
             <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
               About Me
             </h1>
@@ -259,14 +293,21 @@ const Page = () => {
           {/* Experience Timeline */}
           <motion.div
             variants={fadeInUp}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+            className="bg-gradient-to-br from-white via-white to-gray-50
+                     dark:from-gray-800 dark:via-gray-800 dark:to-gray-900
+                     rounded-xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)]
+                     dark:shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]
+                     p-6 border border-gray-100 dark:border-gray-700
+                     hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.2)]
+                     transition-all duration-500 ease-out
+                     hover:border-blue-100 dark:hover:border-blue-900/30"
           >
             <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
               Education
             </h2>
             <div className="space-y-8">
               <div className="flex gap-6">
-                <div className="w-1 bg-blue-500 rounded"></div>
+                <div className="w-1 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full"></div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     Bachelor of Software Engineering
@@ -284,7 +325,7 @@ const Page = () => {
               </div>
 
               <div className="flex gap-6">
-                <div className="w-1 bg-blue-500 rounded"></div>
+                <div className="w-1 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full"></div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     Bachelor of English Studies
@@ -306,7 +347,14 @@ const Page = () => {
           {/* Contact Section */}
           <motion.div
             variants={fadeInUp}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+            className="bg-gradient-to-br from-white via-white to-gray-50
+                     dark:from-gray-800 dark:via-gray-800 dark:to-gray-900
+                     rounded-xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)]
+                     dark:shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]
+                     p-6 border border-gray-100 dark:border-gray-700
+                     hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.2)]
+                     transition-all duration-500 ease-out
+                     hover:border-blue-100 dark:hover:border-blue-900/30"
           >
             <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
               Get in Touch
@@ -322,19 +370,37 @@ const Page = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:bg-[#555a60] rounded flex justify-center align-middle transition-all duration-300"
+                  className="p-3 hover:bg-gray-100 dark:hover:bg-gray-700 
+                           rounded-lg transition-all duration-300 
+                           hover:shadow-lg hover:shadow-blue-500/20
+                           relative group"
                   whileHover={{
-                    scale: 1.1,
+                    scale: 1.15,
+                    rotate: 5,
                     transition: { duration: 0.2 },
                   }}
                 >
+                  <div
+                    className="absolute inset-0 bg-blue-400/20 rounded-lg 
+                                blur-xl group-hover:blur-2xl transition-all 
+                                duration-300 opacity-0 group-hover:opacity-100"
+                  />
                   <Image
-                    className="mx-5"
+                    className="relative z-10 transition-transform duration-300 
+                             group-hover:transform group-hover:translate-y-[-2px]"
                     src={link.icon}
                     alt={link.name}
-                    width="28"
-                    height="28"
+                    width="32"
+                    height="32"
                   />
+                  <span
+                    className="absolute bottom-full left-1/2 transform -translate-x-1/2 
+                                 bg-gray-800 text-white text-xs px-2 py-1 rounded 
+                                 opacity-0 group-hover:opacity-100 transition-opacity 
+                                 mb-2 whitespace-nowrap"
+                  >
+                    {link.name}
+                  </span>
                 </motion.a>
               ))}
             </div>
