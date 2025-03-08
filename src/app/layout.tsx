@@ -136,6 +136,26 @@ export default function RootLayout({
                       </p>
                     </motion.div>
                   </Link>
+                  <Link href="/certs">
+                    <motion.div
+                      className="p-5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
+                      whileHover={{
+                        scale: 1.1,
+                        y: -5,
+                        transition: { duration: 0.1 },
+                      }}
+                    >
+                      <Image
+                        src="/certificate.png"
+                        alt="Portfolio"
+                        width="80"
+                        height="80"
+                      />
+                      <p className="font-bold dark:text-white text-center">
+                        Certificates
+                      </p>
+                    </motion.div>
+                  </Link>
                   <Link href="/portfolio">
                     <motion.div
                       className="p-5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"

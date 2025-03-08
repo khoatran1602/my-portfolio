@@ -8,9 +8,10 @@ const experiences = [
     company: "National Australia Bank",
     period: "2024 - Present",
     description: [
-      "Developed and maintained the CI/CD pipeline for the team using Jenkins, Terraform, and Ansible",
-      "Proposed and implemented the new design for patching using Jenkins as automation",
+      "Proposed and implemented the new design for automation patching by using Jenkins. Removed the manual intervention \
+      instead of waiting for the approval from the team to proceed with the patching, the pipeline will automatically",
       "Developed and built the new Jenkins pipeline for cross-regional image publishing in UK Cloud",
+      "Uplift the existing Jenkins script to use the declarative pipeline to improve the readability and maintainability",
     ],
   },
   {
@@ -20,7 +21,10 @@ const experiences = [
     description: [
       "Learning and adapting to the new environment along with the team and company culture, processes, and technologies",
       "Collaborated with cross-functional teams to solve problems and define, design, and ship new features",
-      "Updated and maintained existing software such as Pulp, Jenkins",
+      "Updated and maintained existing applications such as Pulp. Migration of the application to containerized environment, continued support \
+      and migrating to AWS ECS using Terraform",
+      "Reducing time to publish images by 50% by adjusting the scripts to run in parallel",
+      "Using Ansible to generate the report for the team to monitor the status of the agents in instances",
     ],
   },
 ];
@@ -51,7 +55,9 @@ const Page = () => {
                 {exp.title}
               </h3>
               <p className="text-gray-900 dark:text-gray-200">{exp.company}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{exp.period}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                {exp.period}
+              </p>
               <ul className="list-disc list-inside text-gray-800 dark:text-gray-300">
                 {exp.description.map((item, idx) => (
                   <li key={idx} className="mb-1">
