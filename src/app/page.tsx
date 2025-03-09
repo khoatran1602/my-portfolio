@@ -1,14 +1,18 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('/bio');
+    router.push("/bio");
   }, [router]);
 
-  return null; // or you could return a loading spinner here if you want
+  return (
+    <div className="flex h-screen w-screen items-center justify-center">
+      <div className="h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600" />
+    </div>
+  );
 }

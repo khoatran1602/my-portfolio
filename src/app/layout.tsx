@@ -52,10 +52,10 @@ export default function RootLayout({
                       <br />
                     </div>
                   </div>
-                  <div className="absolute top-1 left-2 p-4 flex flex-col gap-10 opacity-40">
+                  <div className="absolute top-1 left-2 p-4 flex flex-col gap-10">
                     <Image
-                      src="https://assets.codepen.io/9277864/html.svg"
-                      alt="HTML"
+                      src="/java.png"
+                      alt="JAVA"
                       width="100"
                       height="100"
                     />
@@ -65,29 +65,24 @@ export default function RootLayout({
                       width="100"
                       height="100"
                     />
-                    <Image
-                      src="https://assets.codepen.io/9277864/js.svg"
-                      alt="JS"
-                      width="100"
-                      height="100"
-                    />
+                    <Image src="/aws.png" alt="AWS" width="85" height="100" />
                   </div>
-                  <div className="absolute top-1 right-0 p-4 flex flex-col gap-10 opacity-40">
+                  <div className="absolute top-1 right-0 p-4 flex flex-col gap-10">
                     <Image
-                      src="https://assets.codepen.io/9277864/css.svg"
-                      alt="CSS"
+                      src="/azure.png"
+                      alt="Azure"
                       width="100"
                       height="100"
                     />
                     <Image
-                      src="https://assets.codepen.io/9277864/vue.svg"
-                      alt="Vue"
+                      src="/kubernetes.png"
+                      alt="Kubernetes"
                       width="100"
                       height="100"
                     />
                     <Image
-                      src="https://assets.codepen.io/9277864/front-end.svg"
-                      alt="Front-end"
+                      src="/AI.png"
+                      alt="AI"
                       width="100"
                       height="100"
                     />
