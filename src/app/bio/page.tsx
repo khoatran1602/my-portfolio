@@ -246,19 +246,17 @@ const Page = () => {
                   <span>🙋‍♂️</span> Hi lovely/handsome person,
                 </p>
                 <p>
-                  My name is Khoa and I am a soon-to-be graduate with experience
-                  in various programming languages, including Java, TypeScript,
-                  HTML, CSS, React, and NextJS. My main interest lies in web
-                  design and development, with a strong focus on HTML, CSS, and
-                  TypeScript frameworks such as React and NextJS. Additionally,
-                  I have experience working with PostgreSQL and Redis databases.
+                  My name is Khoa and I am currently a Cloud Engineer. But I
+                  have a strong passion for software development and I am always
+                  excited to learn new knowledge and technologies. To me,
+                  learning is a journey, not a destination. I am always seeking
+                  opportunities to improve my skills and build something
+                  amazing.
                   <br />
-                  As someone who understands the challenge of learning technical
-                  skills and building real-world projects, I have worked on a
-                  variety of small projects to gain practical experience and
-                  demonstrate my abilities. I am always excited to learn new
-                  knowledge and technologies, and I am continuously seeking
-                  opportunities to improve my skills.
+                  As of now, I am focusing on building small projects to improve
+                  my skills and knowledge. Also, I will be taking challenges in
+                  AI by applying to Master of Artificial Intelligence at a
+                  university in Vietnam.
                 </p>
                 <p>
                   I understand the challenge of learning technical skills,
@@ -281,9 +279,9 @@ const Page = () => {
                   </li>
                 </ul>
                 <p>
-                  That would be great if we connected on social media,
-                  especially on Github, kept in touch, and shared how we live
-                  this life.
+                  Therefore, that would be great if we connected on social
+                  media, especially on Github, kept in touch, and shared how we
+                  live this life.
                 </p>
                 <p>Let&apos;s work together to build something amazing!</p>
               </div>
