@@ -53,18 +53,8 @@ export default function RootLayout({
                     </div>
                   </div>
                   <div className="absolute top-1 left-2 p-4 flex flex-col gap-10">
-                    <Image
-                      src="/java.png"
-                      alt="JAVA"
-                      width="100"
-                      height="100"
-                    />
-                    <Image
-                      src="https://assets.codepen.io/9277864/programming.svg"
-                      alt="Programming"
-                      width="100"
-                      height="100"
-                    />
+                    <Image src="/java.png" alt="JAVA" width="85" height="100" />
+                    <Image src="/ts.png" alt="TS" width="85" height="100" />
                     <Image src="/aws.png" alt="AWS" width="85" height="100" />
                   </div>
                   <div className="absolute top-1 right-0 p-4 flex flex-col gap-10">
@@ -80,12 +70,7 @@ export default function RootLayout({
                       width="100"
                       height="100"
                     />
-                    <Image
-                      src="/AI.png"
-                      alt="AI"
-                      width="100"
-                      height="100"
-                    />
+                    <Image src="/AI.png" alt="AI" width="100" height="100" />
                   </div>
                 </div>
               </div>
