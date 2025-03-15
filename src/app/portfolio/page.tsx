@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/components/animations";
 import React, { useState, MouseEvent } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Suspense } from "react";
+import { optimizeImageLoading } from "@/lib/performance";
 
 interface PortfolioItem {
   title: string;
@@ -27,7 +30,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Hire Me",
     imageSrc: "https://assets.codepen.io/9277864/designer-desk-1.svg",
     description:
-      "Hire Me makes it simple for job seekers to create professional resumes that showcase their skills. The website application is created using Next.js on the front end and Java on the back end, utilizing a PostgreSQL database and Redis for speed enhancements. Firebase login and sign-up tools simplify the process. Hire Me uses microservices for user and CV management and an API Gateway for efficient routing. Users can simply produce and download PDF copies of their resumes with Hire Me, making it simpler than ever to apply for jobs and stand out in the job market.",
+      "Hire Me is a streamlined platform for creating professional resumes. Built with Next.js frontend and Java backend, it utilizes PostgreSQL and Redis for optimal performance. Authentication is handled via Firebase, while a microservice architecture manages users and CVs through an API Gateway. Users can generate and download PDF resumes instantly, enhancing their job application process.",
     techStack: ["Next.js", "Java", "PostgreSQL", "Redis", "Firebase"],
     demoLink: "#",
     githubLink: "#",
@@ -106,13 +109,13 @@ const Page = () => {
         <div className="flex gap-4">
           <a
             href={project.demoLink}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-200"
           >
             Live Demo
           </a>
           <a
             href={project.githubLink}
-            className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+            className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition-colors duration-200"
           >
             GitHub
           </a>
@@ -141,7 +144,7 @@ const Page = () => {
             key={index}
             variants={fadeInUp}
             className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden
-                     transition-all duration-300 ease-in-out
+                     transition-all duration-200 ease-in-out
                      hover:shadow-2xl hover:shadow-blue-500/10
                      dark:hover:shadow-blue-400/10
                      hover:-translate-y-2
@@ -150,7 +153,7 @@ const Page = () => {
           >
             <div
               className="border border-gray-200 dark:border-gray-700 rounded-md h-full flex flex-col
-                          transition-colors duration-300
+                          transition-colors duration-200
                           hover:border-blue-500/50 dark:hover:border-blue-400/50"
             >
               <div className="bg-[#2d4059] p-4 overflow-hidden">
@@ -160,7 +163,7 @@ const Page = () => {
                   width={400}
                   height={200}
                   className="w-full h-auto rounded
-                           transition-transform duration-300
+                           transition-transform duration-200
                            group-hover:scale-105"
                 />
               </div>
@@ -168,7 +171,7 @@ const Page = () => {
                 className="p-5 flex-grow flex flex-col
                             bg-gradient-to-b from-transparent to-gray-50
                             dark:to-gray-800/50
-                            transition-colors duration-300
+                            transition-colors duration-200
                             group-hover:to-blue-50
                             dark:group-hover:to-blue-900/10"
               >

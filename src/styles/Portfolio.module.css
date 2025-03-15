@@ -1,6 +1,6 @@
 .projectCard {
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   border-radius: 0.75rem;
   overflow: hidden;
 }
@@ -11,7 +11,7 @@
 }
 
 .projectImage {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .projectCard:hover .projectImage {
@@ -19,7 +19,7 @@
 }
 
 .projectContent {
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .projectCard:hover .projectContent {
