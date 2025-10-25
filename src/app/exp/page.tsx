@@ -8,10 +8,14 @@ const experiences = [
     company: "National Australia Bank",
     period: "2024 - Present",
     description: [
-      "Proposed and implemented the new design for automation patching by using Jenkins. Removed the manual intervention \
-      instead of waiting for the approval from the team to proceed with the patching, the pipeline will automatically",
-      "Developed and built the new Jenkins pipeline for cross-regional image publishing in UK Cloud",
-      "Uplift the existing Jenkins script to use the declarative pipeline to improve the readability and maintainability",
+      "Designed and implemented CI/CD automation (instance refresh, health checks, zero-downtime deploys) in Jenkins + Terraform, cutting release time by 90%.",
+      "Built automated cleanup for Amazon S3 packages, reducing monthly storage costs by more than half.",
+      "Manage Azure infrastructure and domain services, including Key Vault rotation, service principal automation, and production domain controller logic.",
+      "Established UK Cloud platform capabilities: publishing hardened images, enabling QA environments, and wiring cross-region connectivity.",
+      "Uplifted legacy Jenkins scripts to declarative pipelines for readability and maintainability.",
+      "Maintained and upgraded Quest Authentication Services, partnering with internal teams to resolve issues via AWS Lambda and Azure Runbook.",
+      "Delivered security/compliance initiatives such as automated vuln scanning, CrowdStrike integration, and enterprise certificate management.",
+      "Provide technical consulting and BAU support while driving strategic infrastructure improvements across clouds.",
     ],
   },
   {
@@ -19,12 +23,10 @@ const experiences = [
     company: "National Australia Bank",
     period: "2023-2024",
     description: [
-      "Learning and adapting to the new environment along with the team and company culture, processes, and technologies",
-      "Collaborated with cross-functional teams to solve problems and define, design, and ship new features",
-      "Updated and maintained existing applications such as Pulp. Migration of the application to containerized environment, continued support \
-      and migrating to AWS ECS using Terraform",
-      "Reducing time to publish images by 50% by adjusting the scripts to run in parallel",
-      "Using Ansible to generate the report for the team to monitor the status of the agents in instances",
+      "Supported and enhanced existing apps (e.g., Pulp) while migrating workloads to containerized architectures and AWS ECS via Terraform.",
+      "Optimized the image publication process by parallelizing steps, reducing publish times by ~50%.",
+      "Automated agent health/status reporting with Ansible to boost observability and response times.",
+      "Worked cross-functionally to learn domain processes and ship incremental features in a fast-paced environment.",
     ],
   },
 ];
