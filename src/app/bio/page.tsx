@@ -34,12 +34,12 @@ const socialLinks = [
   {
     name: "Facebook",
     url: "https://www.facebook.com/tranthien1602/",
-    icon: "https://assets.codepen.io/9277864/social-media-facebook.svg",
+    icon: "/icons/social-media-facebook.svg",
   },
   {
     name: "Twitter",
     url: "https://twitter.com/trankhoa1602",
-    icon: "https://assets.codepen.io/9277864/social-media-twitter.svg",
+    icon: "/icons/social-media-twitter.svg",
   },
   {
     name: "Github",
@@ -49,12 +49,12 @@ const socialLinks = [
   {
     name: "Linkedin",
     url: "https://www.linkedin.com/in/tr%E1%BA%A7n-%C4%91%C4%83ng-khoa-a27a33184/",
-    icon: "https://assets.codepen.io/9277864/linkedin.svg",
+    icon: "/icons/linkedin.svg",
   },
   {
     name: "Google",
     url: "mailto:trankhoa758@gmail.com",
-    icon: "https://assets.codepen.io/9277864/social-media-google.svg",
+    icon: "/icons/social-media-google.svg",
   },
 ];
 

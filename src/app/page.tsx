@@ -1,18 +1,5 @@
-"use client";
-
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-
+// This page redirects to /bio via next.config.js (permanent redirect)
+// This component is kept as a fallback but should rarely render
 export default function Home() {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.push("/bio");
-  }, [router]);
-
-  return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <div className="h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600" />
-    </div>
-  );
+  return null;
 }
