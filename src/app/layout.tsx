@@ -39,8 +39,8 @@ export default function RootLayout({
             <header className="relative pt-8 pb-4">
               {/* Floating tech badges - hidden on mobile */}
               <div className="floating-badges absolute top-8 left-0 p-4 flex flex-col gap-6 opacity-60 hover:opacity-100 transition-opacity">
-                <Image src="/java.png" alt="JAVA" width={60} height={60} className="drop-shadow-lg" priority />
-                <Image src="/ts.png" alt="TS" width={60} height={60} className="drop-shadow-lg" priority />
+                <Image src="/java.png" alt="Java" width={60} height={60} className="drop-shadow-lg" priority />
+                <Image src="/gcp.svg" alt="GCP" width={60} height={60} className="drop-shadow-lg" priority />
                 <Image src="/aws.png" alt="AWS" width={60} height={60} className="drop-shadow-lg" priority />
               </div>
               <div className="floating-badges absolute top-8 right-0 p-4 flex flex-col gap-6 opacity-60 hover:opacity-100 transition-opacity">
@@ -68,7 +68,7 @@ export default function RootLayout({
                   </h1>
                   <p className="text-base font-medium text-gray-600 dark:text-gray-300 mt-2 flex items-center justify-center gap-2">
                     <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                    Software & Cloud Engineer
+                    Cloud & DevOps Engineer
                   </p>
                 </div>
               </div>
