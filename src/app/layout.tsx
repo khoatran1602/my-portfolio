@@ -2,8 +2,20 @@ import "./globals.css";
 import Image from "next/image";
 import React from "react";
 import Navbar from "@/components/Navbar";
-import { ThemeInitializer } from "@/components/ThemeInitializer";
 import { NavigationLinks } from "@/components/NavigationLinks";
+
+// Inline script to prevent flash of white on dark mode
+// This runs BEFORE React hydrates, blocking render until theme is set
+const themeScript = `
+  (function() {
+    try {
+      var isDark = localStorage.getItem('darkMode') === 'true';
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+`;
 
 export default function RootLayout({
   children,
@@ -11,9 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Blocking script to set theme before paint */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
-        <ThemeInitializer />
         <Navbar />
         <div className="flex flex-col bg-gray-50 dark:bg-gray-800 overflow-x-hidden h-full w-full">
           <div className="border-black/10 dark:border-gray-700 shadow-2xl bg-white dark:bg-gray-700 h-full relative pb-30">
